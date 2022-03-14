@@ -1,35 +1,43 @@
 function computerPlay() {
     const choices = Math.floor(Math.random()* 3);
     if (choices == 0) {
-        console.log("Rock");
+        return "Rock";
+        // console.log("Rock");
     } else if (choices == 1) {
-        console.log("Paper");
+        return "Paper";
+        // console.log("Paper");
     } else if (choices == 2) {
-        console.log("Scissor");
+        return "Scissor";
+        // console.log("Scissor");
     }
-    return choices
+   return choices
 }
 
-computerPlay();
+console.log(computerPlay());
 
-function playRound (playerSelection,computerSelection) {
+function playRound (playerSelection, computerSelection) {
+   
+
     if ((playerSelection == "Rock" && computerSelection == "Scissor") ||
-    (playerSelection == "Paper" && computerSelection == "Rock") ||
-    (playerSelection == "Scissor" && computerSelection == "Rock")) {
-        return "Player wins!"
+        (playerSelection == "Paper" && computerSelection == "Rock") ||
+        (playerSelection == "Scissor" && computerSelection == "Paper")) {
+            return "Player wins!";
+            // console.log("Player Wins");
 
     } else if ((computerSelection == "Rock" && playerSelection == "Scissor") ||
-    (computerSelection == "Paper" && playerSelection == "Scissor") ||
-    (computerSelection == "Scissor" && playerSelection == "Rock")) {
-        return "Computer Wins!"
-    } else if ((playerSelection == "Rock" && computerSelection == "Rock") ||
-    (playerSelection == "Scissor" && computerSelection == "Scissor") || 
-    (playerSelection == "Paper" && computerSelection == "Paper")) {
-        return "It's a Time!"
-    }
-    
+        (computerSelection == "Paper" && playerSelection == "Rock") ||
+        (computerSelection == "Scissor" && playerSelection == "Paper")) {
+            return "Computer Wins!";
+            // console.log("Computer Wins");
 
+    } else if ((playerSelection == "Rock" && computerSelection == "Rock") ||
+        (playerSelection == "Scissor" && computerSelection == "Scissor") || 
+        (playerSelection == "Paper" && computerSelection == "Paper")) {
+            return  "It's a Tie!";
+            // console.log("It's a Tie");
+    }
 }
 
-const playerSelection = "Rock";
-computerSelection = computerPlay();
+const playerSelection = "Paper";
+const computerSelection = computerPlay();
+console.log(playRound(playerSelection,computerSelection));
