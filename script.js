@@ -13,6 +13,21 @@ function computerPlay() {
 computerPlay();
 
 function playRound (playerSelection,computerSelection) {
+    if ((playerSelection == "Rock" && computerSelection == "Scissor") ||
+    (playerSelection == "Paper" && computerSelection == "Rock") ||
+    (playerSelection == "Scissor" && computerSelection == "Rock")) {
+        return "Player wins!"
+
+    } else if ((computerSelection == "Rock" && playerSelection == "Scissor") ||
+    (computerSelection == "Paper" && playerSelection == "Scissor") ||
+    (computerSelection == "Scissor" && playerSelection == "Rock")) {
+        return "Computer Wins!"
+    } else if ((playerSelection == "Rock" && computerSelection == "Rock") ||
+    (playerSelection == "Scissor" && computerSelection == "Scissor") || 
+    (playerSelection == "Paper" && computerSelection == "Paper")) {
+        return "It's a Time!"
+    }
+    
 
 }
 
