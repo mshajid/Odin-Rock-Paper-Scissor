@@ -11,3 +11,10 @@ function computerPlay() {
 }
 
 computerPlay();
+
+function playRound (playerSelection,computerSelection) {
+
+}
+
+const playerSelection = "Rock";
+computerSelection = computerPlay();
