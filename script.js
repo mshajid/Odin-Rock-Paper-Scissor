@@ -13,10 +13,9 @@ function computerPlay() {
    return choices
 }
 
-console.log(computerPlay());
-
 
 function playRound (playerSelection, computerSelection) {
+    
     if ((playerSelection == "Rock" && computerSelection == "Scissor") || 
         (playerSelection == "Paper" && computerSelection == "Rock" ) ||
         (playerSelection == "Scissor" && computerSelection == "Paper")) {
@@ -24,7 +23,7 @@ function playRound (playerSelection, computerSelection) {
 
     } else if ((computerSelection == "Rock" && playerSelection == "Scissor") ||
         (computerSelection == "Paper" && playerSelection == "Rock") ||
-        (computerSelection == "Scissor" && playerSelection == "Paper")){
+        (computerSelection == "Scissor" && playerSelection == "Paper")) {
             return "Computer Wins " + computerSelection + " Beats " + playerSelection;
 
     } else if ((playerSelection == "Rock" && computerSelection =="Rock") ||
@@ -35,64 +34,13 @@ function playRound (playerSelection, computerSelection) {
 }
 
 
-
-
-
-// function playRound (playerSelection, computerSelection) {
-//     if (playerSelection == "Rock" && computerSelection == "Scissor") {
-//         return "Player Wins - " + playerSelection + " Beats " + computerSelection;
-
-//     } else if (playerSelection == "Paper" && computerSelection == "Rock") {
-//         return "Player Wins - " + playerSelection + " Beats " + computerSelection;
-
-//     } else if (playerSelection == "Scissor" && computerSelection == "Paper") {
-//         return "Player Wins - " + playerSelection + " Beats " + computerSelection;
-
-//     } else if (computerSelection == "Rock" && playerSelection == "Scissor") {
-//         return "Computer Wins - " + computerSelection + " Beats " + playerSelection;
-
-//     } else if (computerSelection == "Paper" && playerSelection == "Rock") {
-//         return "Computer Wins - " + computerSelection + " Beats " + playerSelection;
-
-//     } else if (computerSelection == "Scissor" && playerSelection == "Paper") {
-//         return "Computer Wins - " + computerSelection + " Beats " + playerSelection;
-
-//     } else if (playerSelection == "Rock" && computerSelection == "Rock") {
-//         return "It's a Tie - " + playerSelection + " Tied with " + computerSelection;
-
-//     } else if (playerSelection == "Paper" && computerSelection == "Paper") {
-//         return "It's a Tie - " + playerSelection + " Tied with " + computerSelection;
-
-//     } else if (playerSelection == "Scissor" && computerSelection =="Scissor") {
-//         return "It's a Tie - " + playerSelection + " Tied with " + computerSelection;
-//     }
-// }
-
-
-
-// function playRound (playerSelection, computerSelection) {
-   
-
-//     if ((playerSelection == "Rock" && computerSelection == "Scissor") ||
-//         (playerSelection == "Paper" && computerSelection == "Rock") ||
-//         (playerSelection == "Scissor" && computerSelection == "Paper")) {
-//             return "Player wins!";
-//             // console.log("Player Wins");
-
-//     } else if ((computerSelection == "Rock" && playerSelection == "Scissor") ||
-//         (computerSelection == "Paper" && playerSelection == "Rock") ||
-//         (computerSelection == "Scissor" && playerSelection == "Paper")) {
-//             return "Computer Wins!";
-//             // console.log("Computer Wins");
-
-//     } else if ((playerSelection == "Rock" && computerSelection == "Rock") ||
-//         (playerSelection == "Scissor" && computerSelection == "Scissor") || 
-//         (playerSelection == "Paper" && computerSelection == "Paper")) {
-//             return  "It's a Tie!";
-//             // console.log("It's a Tie");
-//     }
-// }
-
-const playerSelection = "Paper";
-const computerSelection = computerPlay();
+let computer = computerPlay();
+const playerSelection = "Rock";
+const computerSelection = computer;
+console.log(computer);
 console.log(playRound(playerSelection, computerSelection));
+
+
+
+
+
