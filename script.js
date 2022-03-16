@@ -27,14 +27,12 @@ function game () {
     console.log(msg);
 
     if (humanScore <= 5 && computerScore <= 5) {
-        console.log("Current Score: Human:", humanScore, "Computer", computerScore);
+        console.log("Current Score: Human:", humanScore, "Computer:", computerScore);
         setTimeout(game, 0);
     } else {
-        console.log(winCondition());
+        return alert(winCondition());
     }
 }
-
-
 
 function playRound (playerSelection, computerSelection) {
     
@@ -54,27 +52,15 @@ function playRound (playerSelection, computerSelection) {
         (playerSelection == "Paper" && computerSelection == "Paper") ||
         (playerSelection == "Scissor" && computerSelection == "Scissor")) {
             return "It's a Tie " + playerSelection + " Tied " + computerSelection;
-    } else return alert("Enter a Valid Move.");
+    } else return alert("Enter a Valid Move. Eg: Rock 'First Letter Capital'");
 }
 
 function winCondition () {
     if (humanScore > 5) {
-        return console.log("Player Wins");
+        return alert("Player Wins");
     }; 
 
     if (computerScore > 5) {
-        return console.log("Computer Wins");
+        return alert("Computer Wins");
     };
 }
-
-
-// let computer = computerPlay();
-// const playerSelection = "Rock";
-// const computerSelection = computer;
-// console.log(computer);
-// console.log(playRound(playerSelection, computerSelection));
-
-
-
-
-
