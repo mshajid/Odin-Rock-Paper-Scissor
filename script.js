@@ -20,14 +20,18 @@ function computerPlay() {
 game();
 
 function game () {
-    while (humanScore <= 5 && computerScore <= 5) {
-        let playerSelection = prompt("Enter Rock, Paper, Scissor");
-        let computerSelection = computerPlay();
-        // playerSelection = playerSelection.toUpperCase();
-        // computerSelection = computerSelection.toUpperCase();
-        alert(playRound(playerSelection, computerSelection));
+    let playerSelection = prompt("Enter Rock Paper Scissor");
+    let computerSelection = computerPlay();
+
+    let msg = playRound(playerSelection, computerSelection);
+    console.log(msg);
+
+    if (humanScore <= 5 && computerScore <= 5) {
+        console.log("Current Score: Human:", humanScore, "Computer", computerScore);
+        setTimeout(game, 0);
+    } else {
+        console.log(winCondition());
     }
-    alert(winCondition());
 }
 
 
@@ -50,16 +54,19 @@ function playRound (playerSelection, computerSelection) {
         (playerSelection == "Paper" && computerSelection == "Paper") ||
         (playerSelection == "Scissor" && computerSelection == "Scissor")) {
             return "It's a Tie " + playerSelection + " Tied " + computerSelection;
-    } else return "Enter a Valid Move.";
+    } else return alert("Enter a Valid Move.");
 }
 
 function winCondition () {
-    if (humanScore == 5) {
-        return "Player Wins";
-    } else if (computerScore == 5) {
-        return "Computer Wins";
-    }
+    if (humanScore > 5) {
+        return console.log("Player Wins");
+    }; 
+
+    if (computerScore > 5) {
+        return console.log("Computer Wins");
+    };
 }
+
 
 // let computer = computerPlay();
 // const playerSelection = "Rock";
